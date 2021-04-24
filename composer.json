@@ -2,7 +2,10 @@
     "name": "hexlet/code",
     "description": "hexlet/code descript",
     "type": "library",
-    "bin":["bin/brain-games"],
+    "bin":[
+        "bin/brain-games",
+        "bin/brain-even"
+    ],
     "authors": [
         {
             "name": "Poul Vasenev",
@@ -15,7 +18,8 @@
     },
     "autoload": {
         "files": [
-            "src/Cli.php"
+            "src/Cli.php",
+            "src/Even.php"
           ]
       },
     "require-dev": {
