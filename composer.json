@@ -1,15 +1,21 @@
 {
     "name": "hexlet/code",
     "description": "hexlet/code descript",
-    "type": "project",
-    "bin":[
-        "bin/brain-games"
-    ],
+    "type": "library",
+    "bin":["bin/brain-games"],
     "authors": [
         {
             "name": "Poul Vasenev",
             "email": "p.vasenev@citrus-soft.ru"
         }
     ],
-    "require": {}
+    "license": "MIT",
+    "require": {
+        "wp-cli/php-cli-tools": "^0.11.12"
+    },
+    "autoload": {
+        "files": [
+            "src/Cli.php"
+          ]
+      }
 }
