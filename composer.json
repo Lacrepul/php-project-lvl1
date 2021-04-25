@@ -3,6 +3,7 @@
     "description": "hexlet/code descript",
     "type": "library",
     "bin":[
+        "bin/brain-games",
         "bin/brain-even",
         "bin/brain-calc",
         "bin/brain-gcd",
