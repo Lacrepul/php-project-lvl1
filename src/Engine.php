@@ -33,7 +33,7 @@ function greetingPart(string $gameName)
  * @param int $cnt
  * @param string $name
  * @param string $gameName
- * @return void
+ * @return mixed
  */
 function gameEvent($cnt, $name, $gameName)
 {
@@ -77,6 +77,7 @@ function gameEvent($cnt, $name, $gameName)
             return false;
         }
     }
+    return false;
 }
 
 /**
@@ -130,6 +131,7 @@ function isRightAnswer($question, string $gameName, $questionKey = null)
         }
         return "yes";
     }
+    return false;
 }
 
 /**
@@ -143,6 +145,7 @@ function congratzCheck($cnt, $name)
         line("Congratulations, {$name}!");
         return true;
     }
+    return false;
 }
 
 /**
