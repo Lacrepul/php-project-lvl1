@@ -33,14 +33,13 @@ function greetingPart(string $gameName)
  * @param int $cnt
  * @param string $name
  * @param string $gameName
- * @return mixed
+ * @return void
  */
 function gameEvent($cnt, $name, $gameName)
 {
     if (congratzCheck($cnt, $name)) {
         return true;
     }
-
 
     if ($gameName === "even") {
         if (gameEven($name, $gameName)) {
@@ -282,14 +281,13 @@ function getQuestion($gameName)
         $result     =   [];
         $result[]   =   random_int(1, 100);
         $result[]   =   random_int(1, 100);
-        if ($rand = random_int(1, 3)) {
-            if ($rand == 1) {
-                $result[] = "-";
-            } elseif ($rand == 2) {
-                $result[] = "+";
-            } else {
-                $result[] = "*";
-            }
+        $rand       =   random_int(1, 3);
+        if ($rand == 1) {
+            $result[] = "-";
+        } elseif ($rand == 2) {
+            $result[] = "+";
+        } else {
+            $result[] = "*";
         }
 
         return $result;
