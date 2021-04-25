@@ -183,7 +183,7 @@ function gameEven($name, $gameName)
     {
         $rightAnswer = isRightAnswer($question, $gameName);
         line("'{$answer}' is wrong answer ;(. Correct answer was '{$rightAnswer}'.");
-        line("Let's try again, {$name}");
+        line("Let's try again, {$name}!");
 
         return false;
     }
@@ -206,7 +206,7 @@ function gameCalc($name, $gameName)
     {
         $rightAnswer = isRightAnswer($question, $gameName);
         line("'{$answer}' is wrong answer ;(. Correct answer was '{$rightAnswer}'.");
-        line("Let's try again, {$name}");
+        line("Let's try again, {$name}!");
 
         return false;
     }
@@ -229,7 +229,7 @@ function gameGcd($name, $gameName)
     {
         $rightAnswer = isRightAnswer($question, $gameName);
         line("'{$answer}' is wrong answer ;(. Correct answer was '{$rightAnswer}'.");
-        line("Let's try again, {$name}");
+        line("Let's try again, {$name}!");
 
         return false;
     }
@@ -273,7 +273,7 @@ function gamePrime($name, $gameName)
     {
         $rightAnswer = isRightAnswer($question, $gameName);
         line("'{$answer}' is wrong answer ;(. Correct answer was '{$rightAnswer}'.");
-        line("Let's try again, {$name}");
+        line("Let's try again, {$name}!");
 
         return false;
     }
