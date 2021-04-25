@@ -4,7 +4,8 @@
     "type": "library",
     "bin":[
         "bin/brain-games",
-        "bin/brain-even"
+        "bin/brain-even",
+        "bin/brain-calc"
     ],
     "authors": [
         {
@@ -19,7 +20,9 @@
     "autoload": {
         "files": [
             "src/Cli.php",
-            "src/Even.php"
+            "src/Even.php",
+            "src/Engine.php",
+            "src/Games.php"
           ]
       },
     "require-dev": {
