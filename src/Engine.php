@@ -316,7 +316,7 @@ function getQuestion($gameName)
         $result         =   [];
         $rand           =   random_int(1, 10);
         $progression    =   random_int(1, 10);
-        for($i = 0; $i < 5; $i += 1)
+        for($i = 0; $i < 10; $i += 1)
         {
             if($i === 0)
                 $result[]   =   $progression + $rand;
