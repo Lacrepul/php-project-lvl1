@@ -253,7 +253,7 @@ function gameProgression($name, $gameName)
     {
         $rightAnswer = isRightAnswer($question, $gameName, $questionKey);
         line("'{$answer}' is wrong answer ;(. Correct answer was '{$rightAnswer}'.");
-        line("Let's try again, {$name}");
+        line("Let's try again, {$name}!");
 
         return false;
     }
