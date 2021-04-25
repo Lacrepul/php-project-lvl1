@@ -33,7 +33,7 @@ function greetingPart(string $gameName)
  * @param int $cnt
  * @param string $name
  * @param string $gameName
- * @return void
+ * @return bool
  */
 function gameEvent($cnt, $name, $gameName)
 {
@@ -83,7 +83,7 @@ function gameEvent($cnt, $name, $gameName)
  * @param mixed $question
  * @param string $gameName
  * @param mixed $questionKey
- * @return mixed
+ * @return void
  */
 function isRightAnswer($question, string $gameName, $questionKey = null)
 {
@@ -135,7 +135,7 @@ function isRightAnswer($question, string $gameName, $questionKey = null)
 /**
  * @param int $cnt
  * @param string $name
- * @return bool
+ * @return void
  */
 function congratzCheck($cnt, $name)
 {
@@ -276,7 +276,7 @@ function gamePrime($name, $gameName)
 
 /**
  * @param string $gameName
- * @return mixed
+ * @return void
  */
 function getQuestion($gameName)
 {
