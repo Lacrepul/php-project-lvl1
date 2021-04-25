@@ -9,7 +9,7 @@ use function Brain\Games\Engine\gameEvent;
 const START_CNT = 0;
 
 /**
- * @return nothing
+ * @return null
  */
 function runProgressionGame()
 {
