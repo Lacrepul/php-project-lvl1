@@ -8,6 +8,9 @@ use function Brain\Games\Engine\gameEvent;
 
 const START_CNT = 0;
 
+/**
+ * @return nothing
+ */
 function runCalcGame()
 {
     $gameName = "calc";
