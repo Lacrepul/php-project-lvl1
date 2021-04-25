@@ -14,6 +14,8 @@ function greetingPart(string $gameName)
         line("Answer \"yes\" if the number is even, otherwise answer \"no\".");
     elseif($gameName === "gcd")
         line("Find the greatest common divisor of given numbers.");
+    elseif($gameName === "progression")
+        line("What number is missing in the progression?");
 
     return $name;
 }
@@ -62,10 +64,23 @@ function gameEvent($cnt, $name, $gameName)
             return false;
         }
     }
+    elseif($gameName === "progression")
+    {
+        if(gameProgression($name, $gameName))
+        {
+            $cnt = incrementCnt($cnt);
+
+            return gameEvent($cnt, $name, $gameName);
+        }
+        else
+        {
+            return false;
+        }
+    }
     //todo other games
 }
 
-function isRightAnswer($question, string $gameName)
+function isRightAnswer($question, string $gameName, $questionKey = null)
 {
     if($gameName == "even")
     {
@@ -103,6 +118,13 @@ function isRightAnswer($question, string $gameName)
                 $second -= $first;
             }
         }
+    }
+    elseif($gameName == "progression")
+    {
+        if(array_key_exists($questionKey, $question))
+            return $question[$questionKey];
+        else
+            return false;
     }
     //todo others responses
 }
@@ -196,6 +218,30 @@ function gameGcd($name, $gameName)
     }
 }
 
+function gameProgression($name, $gameName)
+{
+    $question = getQuestion($gameName);
+    $questionWithSecret = $question;
+    $questionKey = array_rand($questionWithSecret);
+    $questionWithSecret[$questionKey] = "...";
+    $questionSeparated = implode(" ", $questionWithSecret);
+    line("Question: {$questionSeparated}");
+    $answer = prompt("Your answer: ");
+    if(isRightAnswer($question, $gameName, $questionKey) == $answer)
+    {
+        line("Correct!");
+        return true;
+    }
+    else
+    {
+        $rightAnswer = isRightAnswer($question, $gameName, $questionKey);
+        line("'{$answer}' is wrong answer ;(. Correct answer was '{$rightAnswer}'.");
+        line("Let's try again, {$name}");
+
+        return false;
+    }
+}
+
 function getQuestion($gameName)
 {
     if($gameName === "calc")
@@ -225,6 +271,22 @@ function getQuestion($gameName)
         $result[]   =   random_int(1, 100);
         $result[]   =   random_int(1, 100);
 
+        return $result;
+    }
+    elseif($gameName === "progression")
+    {
+        $count          =   0;
+        $result         =   [];
+        $rand           =   random_int(1, 10);
+        $progression    =   random_int(1, 10);
+        for($i = 0; $i < 5; $i += 1)
+        {
+            if($i === 0)
+                $result[]   =   $progression + $rand;
+            else
+                $result[]   =   $result[$i-1] + $rand;
+        }
+        
         return $result;
     }
 }

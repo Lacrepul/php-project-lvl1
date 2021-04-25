@@ -13,7 +13,6 @@ function runEvenGame()
     $gameName = "even";
     $name = greetingPart($gameName);
     $question = gameEvent(START_CNT, $name, $gameName);
-    isRightAnswer($question, $gameName);
 }
 
 function runCalcGame()
@@ -21,7 +20,6 @@ function runCalcGame()
     $gameName = "calc";
     $name = greetingPart($gameName);
     $question = gameEvent(START_CNT, $name, $gameName);
-    isRightAnswer($question, $gameName);
 }
 
 function runGcdGame()
@@ -29,5 +27,11 @@ function runGcdGame()
     $gameName = "gcd";
     $name = greetingPart($gameName);
     $question = gameEvent(START_CNT, $name, $gameName);
-    isRightAnswer($question, $gameName);
+}
+
+function runProgressionGame()
+{
+    $gameName = "progression";
+    $name = greetingPart($gameName);
+    $question = gameEvent(START_CNT, $name, $gameName);
 }
