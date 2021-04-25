@@ -16,6 +16,8 @@ function greetingPart(string $gameName)
         line("Find the greatest common divisor of given numbers.");
     elseif($gameName === "progression")
         line("What number is missing in the progression?");
+    elseif($gameName === "prime")
+        line("Answer \"yes\" if given number is prime. Otherwise answer \"no\".");
 
     return $name;
 }
@@ -30,7 +32,6 @@ function gameEvent($cnt, $name, $gameName)
         if(gameEven($name, $gameName))
         {
             $cnt = incrementCnt($cnt);
-
             return gameEvent($cnt, $name, $gameName);
         }
         else
@@ -43,7 +44,6 @@ function gameEvent($cnt, $name, $gameName)
         if(gameCalc($name, $gameName))
         {
             $cnt = incrementCnt($cnt);
-
             return gameEvent($cnt, $name, $gameName);
         }
         else
@@ -56,7 +56,6 @@ function gameEvent($cnt, $name, $gameName)
         if(gameGcd($name, $gameName))
         {
             $cnt = incrementCnt($cnt);
-
             return gameEvent($cnt, $name, $gameName);
         }
         else
@@ -69,7 +68,6 @@ function gameEvent($cnt, $name, $gameName)
         if(gameProgression($name, $gameName))
         {
             $cnt = incrementCnt($cnt);
-
             return gameEvent($cnt, $name, $gameName);
         }
         else
@@ -77,7 +75,18 @@ function gameEvent($cnt, $name, $gameName)
             return false;
         }
     }
-    //todo other games
+    elseif($gameName === "prime")
+    {
+        if(gamePrime($name, $gameName))
+        {
+            $cnt = incrementCnt($cnt);
+            return gameEvent($cnt, $name, $gameName);
+        }
+        else
+        {
+            return false;
+        }
+    }
 }
 
 function isRightAnswer($question, string $gameName, $questionKey = null)
@@ -126,7 +135,15 @@ function isRightAnswer($question, string $gameName, $questionKey = null)
         else
             return false;
     }
-    //todo others responses
+    elseif($gameName == "prime")
+    {
+        for($i = $question - 1; $i > 1; $i -= 1)
+        {
+            if($question % $i == 0)
+                return "no";
+        }
+        return "yes";
+    }
 }
 
 function congratzCheck($cnt, $name)
@@ -242,6 +259,26 @@ function gameProgression($name, $gameName)
     }
 }
 
+function gamePrime($name, $gameName)
+{
+    $question = getQuestion($gameName);
+    line("Question: {$question}");
+    $answer = prompt("Your answer: ");
+    if(isRightAnswer($question, $gameName) == $answer)
+    {
+        line("Correct!");
+        return true;
+    }
+    else
+    {
+        $rightAnswer = isRightAnswer($question, $gameName);
+        line("'{$answer}' is wrong answer ;(. Correct answer was '{$rightAnswer}'.");
+        line("Let's try again, {$name}");
+
+        return false;
+    }
+}
+
 function getQuestion($gameName)
 {
     if($gameName === "calc")
@@ -288,5 +325,9 @@ function getQuestion($gameName)
         }
         
         return $result;
+    }
+    elseif($gameName === "prime")
+    {
+        return random_int(1, 100);
     }
 }

@@ -9,3 +9,4 @@ asciinema:
 3. https://asciinema.org/a/v8iMNaZVb4qlRwbndtU2l5Cok
 4. https://asciinema.org/a/zMLelnQcG9Ah6VtslwFb4OAwz
 5. https://asciinema.org/a/HjOeWgy0fcGc1NhnxLlkeMmBx
+6. https://asciinema.org/a/KELSJu4FSszxebc1ny4r57JPS

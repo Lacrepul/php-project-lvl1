@@ -12,26 +12,33 @@ function runEvenGame()
 {
     $gameName = "even";
     $name = greetingPart($gameName);
-    $question = gameEvent(START_CNT, $name, $gameName);
+    gameEvent(START_CNT, $name, $gameName);
 }
 
 function runCalcGame()
 {
     $gameName = "calc";
     $name = greetingPart($gameName);
-    $question = gameEvent(START_CNT, $name, $gameName);
+    gameEvent(START_CNT, $name, $gameName);
 }
 
 function runGcdGame()
 {
     $gameName = "gcd";
     $name = greetingPart($gameName);
-    $question = gameEvent(START_CNT, $name, $gameName);
+    gameEvent(START_CNT, $name, $gameName);
 }
 
 function runProgressionGame()
 {
     $gameName = "progression";
     $name = greetingPart($gameName);
-    $question = gameEvent(START_CNT, $name, $gameName);
+    gameEvent(START_CNT, $name, $gameName);
+}
+
+function runPrimeGame()
+{
+    $gameName = "prime";
+    $name = greetingPart($gameName);
+    gameEvent(START_CNT, $name, $gameName);
 }
