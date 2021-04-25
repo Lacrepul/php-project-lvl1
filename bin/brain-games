@@ -8,9 +8,7 @@ if (file_exists($autoloadPath1))
 else
     require_once $autoloadPath2;
 
-use function Brain\Games\Gcd\runGcdGame;
+use function Brain\Games\Engine;
 
-line('Welcome to the Brain Game!');
-$name = prompt('May I have your name?');
-line("Hello, %s!", $name);
+greetingPart("string");
 ?>
