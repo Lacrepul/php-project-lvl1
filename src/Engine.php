@@ -120,7 +120,7 @@ function isRightAnswer($question, string $gameName, $questionKey = null)
             return false;
         }
     } elseif ($gameName == "prime") {
-        if($question === 1){
+        if ($question === 1) {
             return "no";
         }
         for ($i = $question - 1; $i > 1; $i -= 1) {
