@@ -240,7 +240,7 @@ function gameProgression($name, $gameName)
     $question = getQuestion($gameName);
     $questionWithSecret = $question;
     $questionKey = array_rand($questionWithSecret);
-    $questionWithSecret[$questionKey] = "...";
+    $questionWithSecret[$questionKey] = "..";
     $questionSeparated = implode(" ", $questionWithSecret);
     line("Question: {$questionSeparated}");
     $answer = prompt("Your answer: ");
