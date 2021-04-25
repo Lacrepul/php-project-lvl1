@@ -7,7 +7,6 @@ use function cli\prompt;
 
 /**
  * @param $gameName String
- * 
  * @return $name String
  */
 function greetingPart(string $gameName)
