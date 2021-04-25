@@ -6,8 +6,8 @@ use function cli\line;
 use function cli\prompt;
 
 /**
- * @param $gameName String
- * @return $name String
+ * @param string $gameName
+ * @return string $name
  */
 function greetingPart(string $gameName)
 {
