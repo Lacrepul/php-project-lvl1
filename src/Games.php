@@ -23,3 +23,11 @@ function runCalcGame()
     $question = gameEvent(START_CNT, $name, $gameName);
     isRightAnswer($question, $gameName);
 }
+
+function runGcdGame()
+{
+    $gameName = "gcd";
+    $name = greetingPart($gameName);
+    $question = gameEvent(START_CNT, $name, $gameName);
+    isRightAnswer($question, $gameName);
+}

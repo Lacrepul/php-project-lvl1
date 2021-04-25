@@ -12,6 +12,8 @@ function greetingPart(string $gameName)
         line("What is the result of the expression?");
     elseif($gameName === "even")
         line("Answer \"yes\" if the number is even, otherwise answer \"no\".");
+    elseif($gameName === "gcd")
+        line("Find the greatest common divisor of given numbers.");
 
     return $name;
 }
@@ -47,6 +49,19 @@ function gameEvent($cnt, $name, $gameName)
             return false;
         }
     }
+    elseif($gameName === "gcd")
+    {
+        if(gameGcd($name, $gameName))
+        {
+            $cnt = incrementCnt($cnt);
+
+            return gameEvent($cnt, $name, $gameName);
+        }
+        else
+        {
+            return false;
+        }
+    }
     //todo other games
 }
 
@@ -68,6 +83,26 @@ function isRightAnswer($question, string $gameName)
             $answer = (int)$first * (int)$second;
 
         return $answer;
+    }
+    elseif($gameName == "gcd")
+    {
+        [$first, $second] = $question;
+
+        while(true)
+        {
+            if($first == $second)
+            {
+                return $second;
+            }
+            if($first > $second)
+            {
+                $first -= $second;
+            }
+            else
+            {
+                $second -= $first;
+            }
+        }
     }
     //todo others responses
 }
@@ -138,6 +173,29 @@ function gameCalc($name, $gameName)
     }
 }
 
+function gameGcd($name, $gameName)
+{
+    $question = getQuestion($gameName);
+    [$first, $second] = $question;
+    line("Question: {$first} {$second}");
+    $answer = prompt("Your answer: ");
+
+    if(isRightAnswer($question, $gameName) == $answer)
+    {
+        line("Correct!");
+        
+        return true;
+    }
+    else
+    {
+        $rightAnswer = isRightAnswer($question, $gameName);
+        line("'{$answer}' is wrong answer ;(. Correct answer was '{$rightAnswer}'.");
+        line("Let's try again, {$name}");
+
+        return false;
+    }
+}
+
 function getQuestion($gameName)
 {
     if($gameName === "calc")
@@ -160,5 +218,13 @@ function getQuestion($gameName)
     elseif($gameName === "even")
     {
         return random_int(1, 100);
+    }
+    elseif($gameName === "gcd")
+    {
+        $result     =   [];
+        $result[]   =   random_int(1, 100);
+        $result[]   =   random_int(1, 100);
+
+        return $result;
     }
 }
