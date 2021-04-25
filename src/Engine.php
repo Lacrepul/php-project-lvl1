@@ -318,4 +318,5 @@ function getQuestion($gameName)
     } elseif ($gameName === "prime") {
         return random_int(1, 100);
     }
+    return false;
 }
