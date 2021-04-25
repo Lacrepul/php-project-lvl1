@@ -3,7 +3,6 @@
     "description": "hexlet/code descript",
     "type": "library",
     "bin":[
-        "bin/brain-games",
         "bin/brain-even",
         "bin/brain-calc",
         "bin/brain-gcd",
@@ -16,6 +15,9 @@
             "email": "p.vasenev@citrus-soft.ru"
         }
     ],
+    "scripts": {
+        "phpcs": "phpcs"
+    },
     "license": "MIT",
     "require": {
         "wp-cli/php-cli-tools": "^0.11.12"
