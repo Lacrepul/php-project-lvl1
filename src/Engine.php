@@ -5,6 +5,11 @@ namespace Brain\Games\Engine;
 use function cli\line;
 use function cli\prompt;
 
+/**
+ * @param $gameName String
+ * 
+ * @return $name String
+ */
 function greetingPart(string $gameName)
 {
     line('Welcome to the Brain Game!');
