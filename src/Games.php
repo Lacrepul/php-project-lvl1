@@ -9,7 +9,7 @@ use function Brain\Games\Engine\gameEvent;
 const START_CNT = 0;
 
 /**
- * @return nothing
+ * @return void
  */
 function runEvenGame()
 {
@@ -19,7 +19,7 @@ function runEvenGame()
 }
 
 /**
- * @return nothing
+ * @return void
  */
 function runCalcGame()
 {
@@ -29,7 +29,7 @@ function runCalcGame()
 }
 
 /**
- * @return nothing
+ * @return void
  */
 function runGcdGame()
 {
@@ -39,7 +39,7 @@ function runGcdGame()
 }
 
 /**
- * @return nothing
+ * @return void
  */
 function runProgressionGame()
 {
@@ -49,7 +49,7 @@ function runProgressionGame()
 }
 
 /**
- * @return nothing
+ * @return void
  */
 function runPrimeGame()
 {

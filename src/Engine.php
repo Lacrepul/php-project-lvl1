@@ -29,6 +29,12 @@ function greetingPart(string $gameName)
     return $name;
 }
 
+/**
+ * @param int $cnt
+ * @param string $name
+ * @param string $gameName
+ * @return mixed
+ */
 function gameEvent($cnt, $name, $gameName)
 {
     if (congratzCheck($cnt, $name)) {
@@ -74,6 +80,12 @@ function gameEvent($cnt, $name, $gameName)
     }
 }
 
+/**
+ * @param mixed $question
+ * @param string $gameName
+ * @param mixed $questionKey
+ * @return mixed
+ */
 function isRightAnswer($question, string $gameName, $questionKey = null)
 {
     if ($gameName == "even") {
@@ -118,6 +130,11 @@ function isRightAnswer($question, string $gameName, $questionKey = null)
     }
 }
 
+/**
+ * @param int $cnt
+ * @param string $name
+ * @return bool
+ */
 function congratzCheck($cnt, $name)
 {
     if ($cnt >= 3) {
@@ -126,7 +143,10 @@ function congratzCheck($cnt, $name)
     }
 }
 
-
+/**
+ * @param int $cnt
+ * @return int $cnt
+ */
 function incrementCnt(int $cnt)
 {
     $cnt = $cnt += 1;
@@ -134,7 +154,9 @@ function incrementCnt(int $cnt)
 }
 
 /**
- * zone of games
+ * @param string $name
+ * @param string $gameName
+ * @return bool
  */
 function gameEven($name, $gameName)
 {
@@ -154,6 +176,11 @@ function gameEven($name, $gameName)
     }
 }
 
+/**
+ * @param string $name
+ * @param string $gameName
+ * @return bool
+ */
 function gameCalc($name, $gameName)
 {
     $question = getQuestion($gameName);
@@ -173,6 +200,11 @@ function gameCalc($name, $gameName)
     }
 }
 
+/**
+ * @param string $name
+ * @param string $gameName
+ * @return bool
+ */
 function gameGcd($name, $gameName)
 {
     $question = getQuestion($gameName);
@@ -192,6 +224,11 @@ function gameGcd($name, $gameName)
     }
 }
 
+/**
+ * @param string $name
+ * @param string $gameName
+ * @return bool
+ */
 function gameProgression($name, $gameName)
 {
     $question = getQuestion($gameName);
@@ -213,6 +250,11 @@ function gameProgression($name, $gameName)
     }
 }
 
+/**
+ * @param string $name
+ * @param string $gameName
+ * @return bool
+ */
 function gamePrime($name, $gameName)
 {
     $question = getQuestion($gameName);
@@ -230,6 +272,10 @@ function gamePrime($name, $gameName)
     }
 }
 
+/**
+ * @param string $gameName
+ * @return mixed
+ */
 function getQuestion($gameName)
 {
     if ($gameName === "calc") {
