@@ -8,6 +8,9 @@ use function Brain\Games\Engine\gameEvent;
 
 const START_CNT = 0;
 
+/**
+ * @return nothing
+ */
 function runEvenGame()
 {
     $gameName = "even";
@@ -15,6 +18,9 @@ function runEvenGame()
     gameEvent(START_CNT, $name, $gameName);
 }
 
+/**
+ * @return nothing
+ */
 function runCalcGame()
 {
     $gameName = "calc";
@@ -22,6 +28,9 @@ function runCalcGame()
     gameEvent(START_CNT, $name, $gameName);
 }
 
+/**
+ * @return nothing
+ */
 function runGcdGame()
 {
     $gameName = "gcd";
@@ -29,6 +38,9 @@ function runGcdGame()
     gameEvent(START_CNT, $name, $gameName);
 }
 
+/**
+ * @return nothing
+ */
 function runProgressionGame()
 {
     $gameName = "progression";
@@ -36,6 +48,9 @@ function runProgressionGame()
     gameEvent(START_CNT, $name, $gameName);
 }
 
+/**
+ * @return nothing
+ */
 function runPrimeGame()
 {
     $gameName = "prime";
